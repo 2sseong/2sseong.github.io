@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SeongHun Lee Portfolio</title>
     <style>
-      /* 리셋 */
       * {
         margin: 0;
         padding: 0;
@@ -24,21 +23,18 @@
         max-width: 100%;
         display: block;
       }
-
-      /* 페이지 부듣럽게 이동 */
       html {
         scroll-behavior: smooth;
       }
-
-      /* 헤더 */
       header {
         background: #ffffff90;
         padding: 20px 10%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        position: sticky;
+        position: fixed;
         top: 0;
+        width: 100%;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         z-index: 100;
         backdrop-filter: blur(5px);
@@ -51,8 +47,6 @@
         margin-left: 20px;
         font-weight: 500;
       }
-
-      /* 메인 섹션 공통 */
       section {
         padding: 80px 10%;
       }
@@ -63,8 +57,30 @@
         padding-bottom: 10px;
         display: inline-block;
       }
-
-      /* 첫 인사 섹션 */
+      .mainpage {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fit=crop&w=1400&q=80') no-repeat center/cover;
+        color: #fff;
+        text-align: center;
+        flex-direction: column;
+        padding: 0 20px;
+        position: relative;
+      }
+      .mainpage h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      }
+      .mainpage p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 10px 20px;
+        border-radius: 8px;
+      }
       .intro {
         text-align: center;
       }
@@ -72,22 +88,6 @@
         margin-top: 20px;
         font-size: 1.2rem;
       }
-
-      /* 스킬 & 경력 */
-      .skills,
-      .experience {
-        margin: 40px 0;
-      }
-      .skills ul,
-      .experience ul {
-        list-style: none;
-      }
-      .skills li,
-      .experience li {
-        margin-bottom: 10px;
-      }
-
-      /* 프로젝트 */
       .projects {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -110,15 +110,6 @@
       .project-info {
         padding: 15px;
       }
-      .project-info h3 {
-        margin-bottom: 10px;
-      }
-      .project-info p {
-        font-size: 0.9rem;
-        color: #555;
-      }
-
-      /* 연락 */
       .contact a {
         display: inline-block;
         margin-right: 20px;
@@ -131,8 +122,6 @@
       .contact a:hover {
         background: #0077cc;
       }
-
-      /* 푸터 */
       footer {
         text-align: center;
         padding: 20px;
@@ -140,14 +129,18 @@
         font-size: 0.9rem;
         color: #666;
       }
-
-      /* 모바일 간격 */
       @media (max-width: 768px) {
         header {
           flex-direction: column;
         }
         nav {
           margin-top: 10px;
+        }
+        .mainpage h1 {
+          font-size: 2.2rem;
+        }
+        .mainpage p {
+          font-size: 1rem;
         }
       }
     </style>
@@ -163,16 +156,15 @@
       </nav>
     </header>
 
-    <section style="background-color: #666">
-      <h1>main</h1>
+    <section class="mainpage">
+      <h1>SeongHun's Portfolio</h1>
+      <p>신입 개발자 이성훈입니다. 혁신적인 소프트웨어 개발을 통해 세상을 바꾸고자 합니다.</p>
     </section>
+
     <main>
       <section id="about" class="intro">
         <h2>ABOUT ME</h2>
-        <p>
-          신입 개발자입니다.<br />HTML, CSS, JavaScript, Python 등을 활용하고,
-          웹표준과 웹접근성을 준수합니다.
-        </p>
+        <p>신입 개발자입니다.<br />HTML, CSS, JavaScript, Python 등을 활용하고, 웹표준과 웹접근성을 준수합니다.</p>
       </section>
 
       <section id="work">
@@ -180,10 +172,7 @@
         <div class="experience">
           <h3>경력</h3>
           <ul>
-            <li>
-              2025.02~2025.07: 빅데이터를 활용한 자바 개발자(국립부경대학교
-              지역산업맞춤형인력양성사업단)
-            </li>
+            <li>2025.02~2025.07: 빅데이터를 활용한 자바 개발자(국립부경대학교 지역산업맞춤형인력양성사업단)</li>
           </ul>
         </div>
         <div class="skills">
@@ -227,7 +216,7 @@
         <h2>CONTACT</h2>
         <p class="contact">
           <a href="mailto:s.young1922@gmail.com">Email</a>
-          <a href="https://github.com/2sseong" target="_blank">GitHub</a>
+          <a href="https://github.com/2sseong" target="_blank" rel="noopener noreferrer">GitHub</a>
         </p>
       </section>
     </main>
