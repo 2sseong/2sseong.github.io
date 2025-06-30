@@ -4,186 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SeongHun Lee Portfolio</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: "Noto Sans KR", sans-serif;
-        line-height: 1.6;
-        color: #333;
-      }
-      a {
-        color: #0099ff;
-        text-decoration: none;
-      }
-      img {
-        max-width: 100%;
-        display: block;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      header {
-        background: #ffffff90;
-        padding: 20px 10%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        z-index: 100;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-      }
-      header h1 {
-        font-size: 1.8rem;
-      }
-      nav a {
-        margin-left: 20px;
-        font-weight: 500;
-      }
-      section {
-        padding: 80px 10%;
-      }
-      section h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        border-bottom: 2px solid #0099ff;
-        padding-bottom: 10px;
-        display: inline-block;
-      }
-      .mainpage {
-        height: 100vh;
-        display: flex;
-        align-items: left;
-        justify-content: center;
-        background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('./img/background.jpg') no-repeat center/cover;
-        color: #fff;
-        text-align: center;
-        flex-direction: column;
-        padding: 0 200px 20px;
-        position: relative;
-         animation: blob 20s linear infinite;
-      }
-
-      @keyframes blob {
-        0% {
-          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        }
-        10% {
-          border-radius: 55% 45% 35% 65% / 65% 35% 65% 35%;
-        }
-        20% {
-          border-radius: 50% 50% 40% 60% / 70% 40% 60% 30%;
-        }
-        30% {
-          border-radius: 65% 35% 45% 55% / 60% 45% 55% 40%;
-        }
-        40% {
-          border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
-        }
-        50% {
-          border-radius: 55% 45% 60% 40% / 45% 55% 35% 65%;
-        }
-        60% {
-          border-radius: 50% 50% 55% 45% / 60% 50% 40% 50%;
-        }
-        70% {
-          border-radius: 65% 35% 50% 50% / 55% 45% 60% 40%;
-        }
-        80% {
-          border-radius: 60% 40% 45% 55% / 50% 60% 40% 50%;
-        }
-        90% {
-          border-radius: 55% 45% 40% 60% / 45% 55% 50% 50%;
-        }
-        100% {
-          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        }
-      }
-      .mainpage h1 {
-        width: 50px;
-        font-size: 3rem;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      }
-      .mainpage p {
-        text-align: left;
-        font-size: 1.2rem;
-        max-width: 600px;
-        padding: 10px 20px;
-        border-radius: 8px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      }
-      .intro {
-        text-align: center;
-      }
-      .intro p {
-        margin-top: 20px;
-        font-size: 1.2rem;
-      }
-      .projects {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-      }
-      .project {
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        overflow: hidden;
-        transition: transform 0.3s, box-shadow 0.3s;
-      }
-      .project:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      }
-      .project img {
-        height: 180px;
-        object-fit: cover;
-      }
-      .project-info {
-        padding: 15px;
-      }
-      .contact a {
-        display: inline-block;
-        margin-right: 20px;
-        padding: 10px 20px;
-        background: #0099ff;
-        color: #fff;
-        border-radius: 4px;
-        transition: background 0.3s;
-      }
-      .contact a:hover {
-        background: #0077cc;
-      }
-      footer {
-        text-align: center;
-        padding: 20px;
-        background: #f9f9f9;
-        font-size: 0.9rem;
-        color: #666;
-      }
-      @media (max-width: 768px) {
-        header {
-          flex-direction: column;
-        }
-        nav {
-          margin-top: 10px;
-        }
-        .mainpage h1 {
-          font-size: 2.2rem;
-        }
-        .mainpage p {
-          font-size: 1rem;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="index.css">
   </head>
+
+  
+
+
   <body>
     <header>
       <h1>SeongHun Lee</h1>
@@ -195,18 +21,18 @@
       </nav>
     </header>
 
-    <section class="mainpage">
+    <section class="mainpage main-border-radius">
       <h1>SeongHun's Portfolio</h1>
       <p>신입 개발자 이성훈입니다. 제가 개발하고자 하는 모든 것들을 통해 함께 성장하고 개선되는 개발자가 목표입니다.</p>
     </section>
 
     <main>
-      <section id="about" class="intro">
+      <section id="about" class="intro scroll-fade-up">
         <h2>ABOUT ME</h2>
         <p>신입 개발자입니다.<br />HTML, CSS, JavaScript, Python 등을 활용하고, 웹표준과 웹접근성을 준수합니다.</p>
       </section>
 
-      <section id="work">
+      <section id="work" class="scroll-fade-up">
         <h2>WORK & SKILLS</h2>
         <div class="experience">
           <h3>경력</h3>
@@ -224,30 +50,34 @@
         </div>
       </section>
 
-      <section id="projects">
+      <section id="projects" class="scroll-fade-up" >
         <h2>PROJECTS</h2>
         <div class="projects">
-          <div class="project">
-            <img src="" alt="없음" />
-            <div class="project-info">
-              <h3>프로젝트명</h3>
-              <p>#Python #CSS #JS</p>
+          <a href="https://github.com/2sseong/mini_project_2025-03">
+            <div class="project scroll-fade-up">
+              <img src="" alt="project1" class="pimg"/>
+              <div class="project-info">
+                <h3>영화예매 키오스크 사이트</h3>
+                <p>#Python #Pyqt5 #Oracle</p>
+              </div>
             </div>
-          </div>
-          <div class="project">
-            <img src="" alt="없음" />
-            <div class="project-info">
-              <h3>프로젝트명</h3>
-              <p>#HTML #CSS #JS</p>
+          </a>
+          <a href="https://github.com/park0609/Mini_Project2">
+            <div class="project scroll-fade-up" >
+              <img src="./img/project2.png" alt="project2" class="pimg" />
+              <div class="project-info">
+                <h3>IT자격증 관련 정보공유 게시판 사이트</h3>
+                <p>#Spring Boot #React #Oracle #Python</p>
+              </div>
             </div>
-          </div>
-          <div class="project">
+          </a>
+          <!-- <div class="project">
             <img src="" alt="없음" />
             <div class="project-info">
               <h3>프로젝트명</h3>
               <p>#JAVA #JS #SpringBoot</p>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
 
@@ -262,4 +92,37 @@
 
     <footer>&copy; 2025 SeongHun Lee. All rights reserved.</footer>
   </body>
+
+
+  <script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  document.querySelectorAll(".scroll-fade-up").forEach((el) => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href").slice(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+
+        // URL 해시 제거
+        history.replaceState(null, "", window.location.pathname);
+      }
+    });
+  });
+</script>
+
 </html>
