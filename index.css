@@ -115,7 +115,7 @@ section h2 {
 .mainpage p {
   text-align: left;
   font-size: 1.2rem;
-  max-width: 600px;
+  max-width: 810px;
   padding: 10px 20px;
   border-radius: 8px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -250,7 +250,7 @@ footer {
 
 .mainpage p {
   font-size: 1.3rem;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 12px;
 }
