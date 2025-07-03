@@ -47,7 +47,8 @@
       <h1 class=" scroll-fade-up">SeongHun's Portfolio</h1>
       <h1 id="typeit" class="scroll-fade-up"></h1>
     </section>
-
+    
+    
     <main>
       <div class="profile-card-full ">
         <div class="profile-photo">
@@ -68,8 +69,9 @@
         </div>
       </div>
 
+
       <section id="about" class="profile-full scroll-fade-up stack-animate">
-        kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+          <div class="info-card">하이ㄴ</div>
       </section>
 
       <section id="projects" class="scroll-fade-up stack-animate">
@@ -124,7 +126,7 @@
           if (i === index) {
             sec.classList.add("stack-visible");
 
-            // ✅ main만 제외하고 카드 보이기
+            // main만 제외하고 카드 보이기
             const profileCard = document.querySelector(".profile-card-full");
             if (sec.id !== "main") {
               profileCard?.classList.add("fixed-visible");

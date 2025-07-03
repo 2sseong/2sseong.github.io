@@ -63,6 +63,7 @@ section {
   transform: translateY(40px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   padding-top: 100px;
+
 }
 
 /* section.visible {
@@ -339,16 +340,27 @@ footer {
   flex-wrap: wrap;
 }
 
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .profile-card-full.fixed-visible {
   display: block;
   position: fixed;
   left: 40px;
-  top: 50%;
+  top: 10%;
   transform: translateY(-50%);
   max-width: 400px;
   width: 30%;
   z-index: 9999;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  animation: slideInLeft 0.8s ease-out forwards;
 }
 
 .profile-photo img {
@@ -400,6 +412,7 @@ footer {
   z-index: 0;
   pointer-events: none;
   background-color: #fff;
+  padding-left: 480px !important;
 }
 
 .stack-visible {
@@ -409,27 +422,25 @@ footer {
   pointer-events: auto;
 }
 
-/* About 섹션 왼쪽 고정 레이아웃 */
-#about.stack-visible {
+/* #about.stack-visible {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   padding-left: 5%;
+  background: linear-gradient(to right, #f8f9fa, #e6f0ff); 
+}
+  */
+
+#about.stack-visible {
+  display: flex;
+  flex-direction: column; /* section 기본값과 동일하게 */
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(to right, #f8f9fa, #e6f0ff);
+  padding-left: 480px !important;  /* 다른 section과 동일하게 */
 }
 
-/* #about.stack-visible .profile-card-full {
-  position: fixed;
-  left: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  max-width: 400px;
-  width: 30%;
-  height: auto;
-  z-index: 10;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-} */
 
 /* 내용 겹치지 않게 오른쪽 공간 확보 */
 #about.stack-visible::after {
@@ -441,5 +452,14 @@ footer {
 
 #main .profile-card-full {
   display: none !important;
+}
+
+.info-card{
+  align-items: center;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  gap: 40px;
 }
 
