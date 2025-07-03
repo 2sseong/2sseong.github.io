@@ -132,12 +132,7 @@ section h2 {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
-.project {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+
 .project:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -146,9 +141,7 @@ section h2 {
   height: 180px;
   object-fit: cover;
 }
-.project-info {
-  padding: 15px;
-}
+
 .contact a {
   display: inline-block;
   margin-right: 20px;
