@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SeongHun Lee Portfolio</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" type="image/png" href="./img/portfolioicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <script src="https://unpkg.com/typeit@8.8.7/dist/index.umd.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new TypeIt("#typeit", {
+          speed: 50,
+          startDelay: 300,
+        })
+          .type("Thanks for visiting.", { delay: 1000 })
+          .delete(9, { delay: 100 })
+          .type("exploring my portfolio", { delay: 1000 })
+          .go();
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h1 style="cursor: default">SeongHun Lee</h1>
+      <nav>
+        <a href="#main">Main</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="main" class="mainpage main-border-radius stack-animate">
+      <h1 class="scroll-fade-up">SeongHun's Portfolio</h1>
+      <h1 id="typeit" class="scroll-fade-up"></h1>
+    </section>
+
+    <main>
+      <div class="profile-card-full">
+        <div class="profile-photo">
+          <img src="./img/profile.jpg" alt="프로필 사진" />
+        </div>
+        <div class="profile-details">
+          <h2><i class="bi bi-person-circle"></i> 이성훈</h2>
+          <p><i class="bi bi-envelope-fill"></i> sh999051@gmail.com</p>
+          <p><i class="bi bi-code-slash"></i> HTML, CSS, JavaScript, Python, Java</p>
+          <p><i class="bi bi-server"></i> Oracle, MySQL, Spring Boot, React</p>
+          <p><i class="bi bi-patch-check-fill"></i> 정보처리기사 (필기합격)</p>
+          <p><i class="bi bi-mortarboard-fill"></i> 부경대 자바 개발자 과정 수료 (2025)</p>
+        </div>
+      </div>
+
+      <section id="about" class="stack-animate">
+        <h2>ABOUT</h2>
+        <p class="scroll-fade-up">안녕하세요! 문제 해결을 즐기며 사용자 중심의 서비스를 고민하는 신입 백엔드 개발자 이성훈입니다.</p>
+      </section>
+
+      <section id="projects" class="stack-animate">
+        <h2>PROJECTS</h2>
+        <div class="projects">
+          <a href="https://github.com/2sseong/mini_project_2025-03">
+            <div class="project scroll-fade-up">
+              <img src="./img/project1.png" alt="project1" class="pimg" />
+              <div class="project-info">
+                <h3>영화예매 키오스크 사이트</h3>
+                <p>#Python #Pyqt5 #Oracle</p>
+              </div>
+            </div>
+          </a>
+          <a href="https://github.com/park0609/Mini_Project2">
+            <div class="project scroll-fade-up">
+              <img src="./img/project2.png" alt="project2" class="pimg" />
+              <div class="project-info">
+                <h3>IT자격증 관련 정보공유 게시판 사이트</h3>
+                <p>#Spring Boot #React #Oracle #Python</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="contact" class="stack-animate">
+        <h2>CONTACT</h2>
+        <p class="contact">
+          <a href="mailto:sh999051@gmail.com">Email</a>
+          <a href="https://github.com/2sseong" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </section>
+    </main>
+
+    <script>
+      const sections = document.querySelectorAll(".stack-animate");
+      let current = 0;
+      let isScrolling = false;
+
+      function showSection(index) {
+        if (index < 0 || index >= sections.length) return;
+
+        sections.forEach((sec, i) => {
+          sec.classList.remove("stack-visible");
+          if (i === index) {
+            sec.classList.add("stack-visible");
+
+            const profileCard = document.querySelector(".profile-card-full");
+            if (sec.id !== "main") {
+              profileCard?.classList.add("fixed-visible");
+            } else {
+              profileCard?.classList.remove("fixed-visible");
+            }
+
+            sec.querySelectorAll(".scroll-fade-up").forEach((el) => {
+              el.classList.add("visible");
+            });
+          }
+        });
+
+        current = index;
+      }
+
+      window.addEventListener("wheel", (e) => {
+        if (isScrolling) return;
+        isScrolling = true;
+
+        if (e.deltaY > 0 && current < sections.length - 1) {
+          showSection(current + 1);
+        } else if (e.deltaY < 0 && current > 0) {
+          showSection(current - 1);
+        }
+
+        setTimeout(() => (isScrolling = false), 700);
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href").slice(1);
+          const target = document.getElementById(targetId);
+          const index = Array.from(sections).indexOf(target);
+          if (index !== -1) {
+            showSection(index);
+          }
+        });
+      });
+
+      window.addEventListener("DOMContentLoaded", () => {
+        showSection(0);
+      });
+    </script>
+  </body>
+</html>
