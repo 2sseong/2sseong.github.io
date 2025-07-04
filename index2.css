@@ -275,13 +275,13 @@ section h2 {
 }
 
 .profile-details h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin-bottom: 20px;
   color: #222;
 }
 
 .profile-details p {
-  font-size: 1.3rem;
+  font-size: 1.05rem;
   color: #444;
   margin: 10px 0;
   display: flex;
@@ -291,7 +291,7 @@ section h2 {
 
 .profile-details i {
   color: #0099ff;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 .bi{
   width: 30px;
@@ -312,7 +312,6 @@ section h2 {
   background-color: #fff;
   padding-left: 480px !important;
   background: linear-gradient(to right, #f8f9fa, #e6f0ff);
-  
 }
 
 .left-zero{
@@ -326,6 +325,10 @@ section h2 {
   pointer-events: auto;
 }
 
+#about{
+  padding-left: 550px !important;
+
+}
 
 #about.stack-visible {
   display: flex;
@@ -334,13 +337,8 @@ section h2 {
   align-items: center;
   background: linear-gradient(to right, #f8f9fa, #e6f0ff);
   padding-top: 80px;  /* 헤더 높이보다 여유 있게 */
-  padding-left: 550px !important;
-
 }
 
-#about{
-  padding-left: 550px !important;
-}
 
 /* 내용 겹치지 않게 오른쪽 공간 확보 */
 #about.stack-visible::after {
@@ -364,8 +362,13 @@ section h2 {
   gap: 40px;
   margin: 10px;
   width: 100%;
-  max-width: 1300px;
-  
+
+}
+.info-course{
+  height: 30%;
+}
+.info-skills{
+  height: 70%;
 }
 
 .skill-section {
@@ -485,4 +488,82 @@ li::before {
 }
 .contact a:hover {
   background: #0077cc;
+}
+/* ------------------------- */
+/* Fully Responsive Add-ons  */
+/* ------------------------- */
+
+@media (max-width: 1024px) {
+  .profile-card-full.fixed-visible {
+    position: static;
+    width: 100%;
+    max-width: 90%;
+    margin: 20px auto;
+  }
+  .stack-animate {
+    padding-left: 0 !important;
+  }
+  #about.stack-visible {
+    padding-left: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-card {
+    padding: 20px;
+    max-width: 100%;
+  }
+  .project-card {
+    width: 100%;
+    height: auto;
+  }
+  .project-info {
+    padding: 10px;
+  }
+  .profile-details p {
+    font-size: 1rem;
+  }
+  .project-info h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    padding: 10px;
+  }
+  nav a {
+    font-size: 0.9rem;
+    margin-left: 10px;
+  }
+  .mainpage h1 {
+    font-size: 1.8rem;
+  }
+  .mainpage p {
+    font-size: 1rem;
+    padding: 15px;
+  }
+  .profile-photo img {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .profile-card-full {
+    /* position: static !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    margin-top: 80px;
+    z-index: 1;
+    box-shadow: none; */
+    display: none !important;
+  }
 }

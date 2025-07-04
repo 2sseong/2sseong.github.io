@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SeongHun Lee Portfolio</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index2.css" />
     <link rel="icon" type="image/png" href="./img/portfolioicon.png" />
     <link
       rel="stylesheet"
@@ -81,7 +81,7 @@
       </div>
 
       <section id="about" class="scroll-fade-up stack-animate">
-        <div class="info-card">
+        <div class="info-card info-course">
           <h2>Course completion</h2>
           <p><strong>교육명 : </strong>빅데이터를 활용한 자바 개발자</p>
           <p><strong>교육기간 : </strong>2025.02.03 ~ 2025.07.29</p>
@@ -95,7 +95,7 @@
             Spring, Python, React
           </p>
         </div>
-        <div class="info-card">
+        <div class="info-card info-skills">
           <h2>Skills</h2>
 
           <div class="skill-section">
@@ -200,17 +200,19 @@
           <a href="https://github.com/2sseong/mini_project_2025-03">
             <div class="project-card">
               <img src="./img/project1.png" alt="프로젝트1" />
-              <div class="project-info">
-                <h3>영화예매 키오스크 사이트</h3>
-                <p><strong>주제 :</strong>예매 정보를 기반으로 데이터 시각화가 가능한 영화예매 키오스크 </p>
-                <p><strong>활용기술 :</strong>PyQt5, Python, Oracle</p>
-                <p><strong>주요기능</strong>
-                  <ul>
-                    <li>영화 목록 확인 및 시간/ 관 선택, 인원 선택 및 좌석 선택, 회원 비회원 확인 및 결제 진행</li>
-                    <li>결제 시 DB내에 예매정보 생성, 조회 기능</li>
-                    <li>관리자 페이지 이동 시 예매정보 기반 영화별 예매 건수 통계 그래프 확인</li>
-                  </ul>
-                </p>
+              <div class="project-overlay">
+                <div class="project-info">
+                  <h3>영화예매 키오스크 사이트</h3>
+                  <p><strong>주제 :</strong>예매 정보를 기반으로 데이터 시각화가 가능한 영화예매 키오스크 </p>
+                  <p><strong>활용기술 :</strong>PyQt5, Python, Oracle</p>
+                  <p><strong>주요기능</strong>
+                    <ul>
+                      <li>영화 목록 확인 및 시간/ 관 선택, 인원 선택 및 좌석 선택, 회원 비회원 확인 및 결제 진행</li>
+                      <li>결제 시 DB내에 예매정보 생성, 조회 기능</li>
+                      <li>관리자 페이지 이동 시 예매정보 기반 영화별 예매 건수 통계 그래프 확인</li>
+                    </ul>
+                  </p>
+                </div>
               </div>
             </div>
           </a>
@@ -218,21 +220,25 @@
           <a href="https://github.com/park0609/Mini_Project2?tab=readme-ov-file">
             <div class="project-card">
               <img src="./img/project2.png" alt="프로젝트2" />
-              <div class="project-info">
-                <h3>IT자격증 정보 공유 게시판</h3>
-                <p><strong>주제 :</strong>예매 정보를 기반으로 데이터 시각화가 가능한 영화예매 키오스크 </p>
-                <p><strong>활용기술 :</strong>Spring Boot, React, Oracle, Python</p>
-                <p><strong>주요기능</strong>
-                  <ul>
-                    <li> 로그인 기능(서버 내 쿠키로 로그인 정보 저장)</li>
-                    <li> 카테고리별 자격증 분류 및 상세 정보 제공</li>
-                    <li> 자격증 연도별 합격률, 응시자 수 추이 등 차트로 시각화 </li>
-                    <li> 자격증 정보 공유를 위한 게시판 기능 구현 / 게시글, 댓글, 답글 작성 추가</li>
-                  </ul>
-                </p>
+              <div class="project-overlay">
+                <div class="project-info">
+                  <h3>IT자격증 정보 공유 게시판</h3>
+                  <p><strong>주제 :</strong>예매 정보를 기반으로 데이터 시각화가 가능한 영화예매 키오스크 </p>
+                  <p><strong>활용기술 :</strong>Spring Boot, React, Oracle, Python</p>
+                  <p><strong>주요기능</strong>
+                    <ul>
+                      <li> 로그인 기능(서버 내 쿠키로 로그인 정보 저장)</li>
+                      <li> 카테고리별 자격증 분류 및 상세 정보 제공</li>
+                      <li> 자격증 연도별 합격률, 응시자 수 추이 등 차트로 시각화 </li>
+                      <li> 자격증 정보 공유를 위한 게시판 기능 구현 / 게시글, 댓글, 답글 작성 추가</li>
+                    </ul>
+                  </p>
+                </div>
               </div>
             </div>
           </a>
+
+          
         </div>
       </section>
 
@@ -253,7 +259,6 @@
                   if (i === index) {
                     sec.classList.add("stack-visible");
 
-                    // main만 제외하고 카드 보이기
                     const profileCard = document.querySelector(".profile-card-full");
                     if (sec.id !== "main") {
                       profileCard?.classList.add("fixed-visible");
@@ -261,7 +266,6 @@
                       profileCard?.classList.remove("fixed-visible");
                     }
 
-                    // 애니메이션 트리거
                     sec.querySelectorAll(".scroll-fade-up").forEach((el) => {
                       el.classList.add("visible");
                     });
@@ -271,7 +275,6 @@
                 current = index;
               }
 
-              // 휠 이동
               window.addEventListener("wheel", (e) => {
                 if (isScrolling) return;
                 isScrolling = true;
@@ -285,7 +288,6 @@
                 setTimeout(() => (isScrolling = false), 700);
               });
 
-              // 메뉴 클릭 이동
               document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
                 anchor.addEventListener("click", function (e) {
                   e.preventDefault();
@@ -298,7 +300,6 @@
                 });
               });
 
-              // 초기화
               window.addEventListener("DOMContentLoaded", () => {
                 showSection(0);
               });
@@ -309,7 +310,6 @@
         document.getElementById(id).classList.remove("active");
       }
       function keepOverlay(id) {
-        // 아무 것도 하지 않음으로써 유지
       }
     </script>
   </body>
