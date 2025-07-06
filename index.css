@@ -581,3 +581,8 @@ li::before {
   font-size: 3rem;
   padding-bottom: 30px;
 }
+
+svg{
+  width: 60px;
+  height: 60px;
+}
