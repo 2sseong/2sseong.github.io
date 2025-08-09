@@ -2,320 +2,228 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>이성훈 | 포트폴리오</title>
-    <link rel="stylesheet" href="index.css" />
     <link rel="icon" type="image/png" href="./img/portfolioicon.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
     <script src="https://unpkg.com/typeit@8.8.7/dist/index.umd.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        new TypeIt("#typeit", {
-          speed: 50,
-          startDelay: 300,
-        })
-          .type("Thanks for visiting.", { delay: 1000 })
-          .delete(1, {delay:100})
-          .delete(1, {delay:100})
-          .delete(1, {delay:100})
-          .delete(1, {delay:100})
-          .delete(1, {delay:100})
-          .delete(1, {delay:100})
-          .delete(1, {delay:100})
-          .delete(1, {delay:100})
-          .delete(1, {delay:100})
-          .type("exploring my portfolio", { delay: 1000 })
-          .go();
-      });
-    </script>
   </head>
 
   <body>
-    <header>
-      <h1 style="cursor: default">SeongHun Lee</h1>
-      <nav>
-        <a href="#main">MAIN</a>
-        <a href="#about">ABOUT ME</a>
+    <!-- NAV -->
+    <header class="nav">
+      <a class="logo" href="#home">SeongHun</a>
+      <nav class="nav-links">
+        <a href="#home">MAIN</a>
+        <a href="#about">ABOUT</a>
+        <a href="#skills">SKILLS</a>
         <a href="#projects">PROJECTS</a>
         <a href="#contact">CONTACT</a>
       </nav>
     </header>
-    <section id="main" class="mainpage main-border-radius stack-animate left-zero">
-      <h1 class=" scroll-fade-up">SeongHun's Portfolio</h1>
-      <h1 id="typeit" class="scroll-fade-up"></h1>
-    </section>
 
     <main>
-      <div class="profile-card-full ">
-        <div class="profile-photo">
-          <img src="./img/profile.jpg" alt="프로필 사진" />
+      <!-- Hero / MAIN -->
+      <section class="section hero" id="home" data-io>
+        <div class="container">
+          <h1 class="display">사용자 경험을 집요하게 개선하는<br/>백엔드 개발자 이성훈</h1>
+          <p class="sub">Spring Boot · Oracle · React · Python</p>
+          <p class="sub" id="typeit"></p>
         </div>
-        <div class="profile-details">
-          <h2><i class="bi bi-person-circle"></i> 이성훈</h2>
-          <p>
-            <i class="bi bi-mortarboard-fill"></i> 동아대학교 건강관리학과 졸업
-          </p>
-          <p>
-            <i class="bi bi-patch-check-fill"></i> 데이터분석준전문가(ADsP),
-            정보처리기사 (필기합격)
-          </p>
-          <p><i class="bi bi-geo-alt-fill"></i> 부산</p>
-        </div>
-      </div>
+      </section>
 
-      <section id="about" class="scroll-fade-up stack-animate about-section">
-        <div class="info-card">
-          <h2>ABOUT ME</h2>
-          <p>
-            안녕하세요! 신입 백엔드 개발자 이성훈입니다.
-          </p>
-          <br>
-          <p>
-          Java, Spring Boot, Oracle, MySQL, Python 등 다양한 기술을 활용하여 서버 사이드 로직을 설계하고, React를 통한 프론트엔드 연동도 함께 경험했습니다.
-          데이터 흐름과 구조를 이해하며, 안정적인 백엔드 시스템 구현에 집중하고 있습니다.
-        </p>
-        <br>
-        <p>
-          기획 의도를 파악하고, 사용자 관점에서 더 나은 방향을 고민하는 것을 좋아합니다.
-          문제가 생기면 끝까지 파고들며, 해결할 때의 성취감이 저를 한 단계 더 성장하게 합니다.
-        </p>
-        <br>
-        <p>
-          새로운 기술을 배우는 것을 즐기고, 맡은 일에 책임감을 가지고 임합니다.
-          주어진 역할 속에서 팀과 함께 성장하며, 가치 있는 결과를 만들어내는 개발자가 되고자 합니다.
-        </p>
-      </div>
-        <div class="info-card info-course">
-          <h2>COURSE COMPLETION</h2>
-          <p><strong>교육명 : </strong>빅데이터를 활용한 자바 개발자</p>
-          <p><strong>교육기간 : </strong>2025.02.03 ~ 2025.07.29</p>
-          <p>
-            <strong>교육기관명 : </strong>부경대학교 지역산업맞춤형
-            인력양성사업단
-          </p>
-          <p>
-            <strong>내용 : </strong>HTML5/CSS3을 활용한 화면 설계,
-            JavaScript/JQuery 활용, Oracle 데이터 베이스, Java프로그래밍, JSP,
-            Spring, Python, React
-          </p>
-        </div>
-        <div class="info-card info-skills">
-          <h2>SKILLS</h2>
+      <!-- ABOUT -->
+      <section class="section" id="about" data-io>
+        <div class="container grid-2">
+          <!-- 소개/과정 -->
+          <div>
+            <h2 class="headline">About</h2>
+            <div class="card body">
+              <p>안녕하세요! 신입 백엔드 개발자 이성훈입니다.</p>
+              <p>Java, Spring Boot, Oracle, MySQL, Python 등 다양한 기술을 활용하여 서버 사이드 로직을 설계하고, React를 통한 프론트엔드 연동도 함께 경험했습니다. 데이터 흐름과 구조를 이해하며, 안정적인 백엔드 시스템 구현에 집중하고 있습니다.</p>
+              <p>기획 의도를 파악하고, 사용자 관점에서 더 나은 방향을 고민하는 것을 좋아합니다. 문제가 생기면 끝까지 파고들며, 해결할 때의 성취감이 저를 한 단계 더 성장하게 합니다.</p>
+              <p>새로운 기술을 배우는 것을 즐기고, 맡은 일에 책임감을 가지고 임합니다. 주어진 역할 속에서 팀과 함께 성장하며, 가치 있는 결과를 만들어내는 개발자가 되고자 합니다.</p>
+            </div>
 
-          <div class="skill-section">
-            <h3><i class="bi bi-code-slash"></i> LANGUAGE</h3>
-            <div class="img-line">
-              <img
-              class="img-icon"
-              src="https://img.icons8.com/?size=100&id=13679&format=png"
-              width="26"
-              />
-              <img
-              class="img-icon"
-              src="https://img.icons8.com/?size=100&id=13441&format=png"
-              width="26"
-              />
+            <div class="card">
+              <h3 class="card-title">Course Completion</h3>
+              <p class="body"><strong>교육명:</strong> 빅데이터를 활용한 자바 개발자</p>
+              <p class="body"><strong>교육기간:</strong> 2025.02.03 ~ 2025.07.29</p>
+              <p class="body"><strong>교육기관명:</strong> 부경대학교 지역산업맞춤형 인력양성사업단</p>
+              <p class="body"><strong>내용:</strong> HTML5/CSS3, JavaScript/jQuery, Oracle DB, Java, JSP, Spring, Python, React</p>
             </div>
           </div>
 
-          <div class="skill-section">
-            <h3><i class="bi bi-database-fill-gear"></i> DBMS</h3>
-            <div class="img-line">
-              <img
-              class="img-icon"
-              src="https://img.icons8.com/?size=100&id=39913&format=png&color=000000"
-              width="26"
-              />
-            </div>
-          </div>
+          <!-- 프로필/스킬(사이드) -->
+          <aside class="profile-wrap">
+            <div class="profile-sticky">
+              <div class="card profile-card">
+                <img class="avatar" src="./img/profile.jpg" alt="프로필" />
+                <div>
+                  <h2><i class="bi bi-person-circle"></i> 이성훈</h2>
+                  <p><i class="bi bi-mortarboard-fill"></i> 동아대학교 건강관리학과 졸업</p>
+                  <p><i class="bi bi-patch-check-fill"></i> ADsP, 정보처리기사(필기)</p>
+                  <p><i class="bi bi-geo-alt-fill"></i> 부산</p>
+                </div>
+              </div>
 
-          <div class="skill-section">
-            <h3><i class="bi bi-boxes"></i> FRAMEWORK / LIBRARY</h3>
-            <div class="img-line">
-              <img
-              class="img-icon"
-              src="https://img.icons8.com/?size=100&id=90519&format=png"
-              width="26"
-              />
-              <svg xmlns="http://www.w3.org/2000/svg" width="256" height="257" viewBox="0 0 256 257"><path fill="#005F0F" d="M0 0h256v256.431H0z"></path><path fill="#FFF" d="M218.187 34.965c-31.528 38.634-70.032 70.992-111.094 99.043c-13.348 9.555-28.084 18.06-38.347 31.144c-3.92 6.886-4.865 16.584 1.836 22.172c11.16 10.517 28.544 12.805 42.525 6.917c19.575-7.456 33.094-24.427 44.458-41.25c25.358-36.533 40.737-78.555 60.622-118.026"></path><path fill="#AEA99F" d="M200.104 48.324c-39.254 31.102-70.652 47.91-110.797 62.37c-12.116 5.184-25.1 11.763-30.73 24.485c-5.794 12.036-3.895 28.82 2.753 39.963c-.497-4.69 2.009-12.27 5.738-15.829c12.372-13.778 28.488-22.806 42.663-33.269l.034-.028l.034-.023c32.806-22.53 63.563-48.276 90.305-77.67"></path></svg>
-              <img
-              class="img-icon"
-              src="https://img.icons8.com/?size=100&id=bzf0DqjXFHIW&format=png&color=000000"
-              width="26"
-              />
-              <img
-              class="img-icon"
-              src="https://img.icons8.com/?size=100&id=11890&format=png&color=000000"
-              width="26"
-              />
+              <div class="card skills">
+                <h3 class="card-title">Skills</h3>
+                <ul class="list">
+                  <li><span class="chip"><i class="bi bi-code-slash"></i> Java · Python</span></li>
+                  <li><span class="chip"><i class="bi bi-database"></i> Oracle · MySQL</span></li>
+                  <li><span class="chip"><i class="bi bi-boxes"></i> Spring Boot · React</span></li>
+                  <li><span class="chip"><i class="bi bi-cloud"></i> REST · Docker · JWT</span></li>
+                </ul>
+              </div>
             </div>
-          </div>
+          </aside>
+        </div>
+      </section>
 
-          <div class="skill-section">
-            <h3><i class="bi bi-tools"></i> TOOLS</h3>
-            <div class="img-line">
-                <img
-                class="img-icon"
-                src="https://img.icons8.com/?size=100&id=3tC9EQumUAuq&format=png&color=000000"
-                width="26"
-                />
-                <img
-                class="img-icon"
-                src="https://img.icons8.com/?size=100&id=kjaF4LlvyR6g&format=png&color=000000"
-                width="26"
-                />
-                <img
-                class="img-icon"
-                src="https://img.icons8.com/?size=100&id=cdYUlRaag9G9&format=png&color=000000"
-                width="26"
-                />
-                <img
-                class="img-icon"
-                src="https://img.icons8.com/?size=100&id=y7WGoWNuIWac&format=png&color=000000"
-                width="26"
-                />
-            </div>
+      <!-- Skills (메인 섹션) -->
+      <section class="section" id="skills" data-io>
+        <div class="container">
+          <h2 class="headline">Skills</h2>
+          <div class="skills-grid">
+            <article class="skill-card">
+              <h3>Language</h3>
+              <ul class="skill-list">
+                <li>Java</li>
+                <li>Python</li>
+                <li>JavaScript (ES6+)</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <h3>Backend / Framework</h3>
+              <ul class="skill-list">
+                <li>Spring Boot (JPA, Security)</li>
+                <li>REST API 설계</li>
+                <li>JWT · OAuth2</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <h3>Database</h3>
+              <ul class="skill-list">
+                <li>Oracle · MySQL</li>
+                <li>SQL 튜닝 / 인덱싱</li>
+                <li>ERD 설계</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <h3>Frontend</h3>
+              <ul class="skill-list">
+                <li>React (Hooks)</li>
+                <li>Axios · 상태관리 기초</li>
+                <li>반응형 레이아웃</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <h3>Infra / Tools</h3>
+              <ul class="skill-list">
+                <li>Docker · Git/GitHub</li>
+                <li>Gradle · npm</li>
+                <li>배포 & 로그 모니터링</li>
+              </ul>
+            </article>
           </div>
         </div>
       </section>
 
-      <section id="projects" class="scroll-fade-up stack-animate">
-        <div class="projects">
-          <h2 class="projects-head">PROJECTS</h2>
-          <a href="https://github.com/2sseong/mini_project_2025-03">
-            <div class="project-card">
-              <img src="./img/project1.png" alt="프로젝트1" />
-              <div class="project-overlay">
-                <div class="project-info">
+      <!-- PROJECTS -->
+      <section class="section" id="projects" data-io>
+        <div class="container">
+          <h2 class="headline">Projects</h2>
+
+          <div class="gallery">
+            <!-- 프로젝트 1 -->
+            <a class="project" href="https://github.com/2sseong/mini_project_2025-03" target="_blank" rel="noopener">
+              <img src="./img/project1.png" alt="영화예매 키오스크" class="project-img"/>
+              <div class="overlay">
+                <div>
                   <h3>영화예매 키오스크 사이트</h3>
-                  <p><strong>주제 :</strong>예매 정보를 기반으로 데이터 시각화가 가능한 영화예매 키오스크 </p>
-                  <p><strong>활용기술 :</strong>PyQt5, Python, Oracle</p>
-                  <p><strong>주요기능</strong>
-                    <ul>
-                      <li>영화 목록 확인 및 시간/ 관 선택, 인원 선택 및 좌석 선택, 회원 비회원 확인 및 결제 진행</li>
-                      <li>결제 시 DB내에 예매정보 생성, 조회 기능</li>
-                      <li>관리자 페이지 이동 시 예매정보 기반 영화별 예매 건수 통계 그래프 확인</li>
-                    </ul>
-                  </p>
+                  <p><strong>주제:</strong> 예매 정보를 기반으로 데이터 시각화가 가능한 키오스크</p>
+                  <p><strong>기술:</strong> PyQt5 · Python · Oracle</p>
+                  <ul class="bullets">
+                    <li>영화/시간/관/인원/좌석 선택 & 결제</li>
+                    <li>결제 시 DB 예매정보 생성·조회</li>
+                    <li>관리자: 영화별 예매 건수 통계 그래프</li>
+                  </ul>
                 </div>
               </div>
-            </div>
-          </a>
-            
-          <a href="https://github.com/park0609/Mini_Project2?tab=readme-ov-file">
-            <div class="project-card">
-              <img src="./img/project2.png" alt="프로젝트2" />
-              <div class="project-overlay">
-                <div class="project-info">
-                  <h3>IT자격증 정보 공유 게시판</h3>
-                  <p><strong>주제 :</strong>예매 정보를 기반으로 데이터 시각화가 가능한 영화예매 키오스크 </p>
-                  <p><strong>활용기술 :</strong>Spring Boot, React, Oracle, Python</p>
-                  <p><strong>주요기능</strong>
-                    <ul>
-                      <li> 로그인 기능(서버 내 쿠키로 로그인 정보 저장)</li>
-                      <li> 카테고리별 자격증 분류 및 상세 정보 제공</li>
-                      <li> 자격증 연도별 합격률, 응시자 수 추이 등 차트로 시각화 </li>
-                      <li> 자격증 정보 공유를 위한 게시판 기능 구현 / 게시글, 댓글, 답글 작성 추가</li>
-                    </ul>
-                  </p>
+            </a>
+
+            <!-- 프로젝트 2 -->
+            <a class="project" href="https://github.com/park0609/Mini_Project2?tab=readme-ov-file" target="_blank" rel="noopener">
+              <img src="./img/project2.png" alt="IT 자격증 정보 공유" class="project-img"/>
+              <div class="overlay">
+                <div>
+                  <h3>IT 자격증 정보 공유 게시판</h3>
+                  <p><strong>기술:</strong> Spring Boot · React · Oracle · Python</p>
+                  <ul class="bullets">
+                    <li>로그인(서버 쿠키), 게시판/댓글/답글</li>
+                    <li>카테고리별 자격증 상세 정보</li>
+                    <li>연도별 합격률/응시자 수 추이 시각화</li>
+                  </ul>
                 </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </section>
 
-      <section id="contact" class="scroll-fade-up stack-animate">
-        <h2>CONTACT</h2>
-        <h1 class="contact-thank">Thank You</h1>
-        <div class="contact-thank2">봐주셔서 감사합니다.</div>
-        <h1 class="contact-email">sh999051@naver.com</h1>
-        <h1 class="contact-h1">저에게 궁금한 점이 있으시다면 연락해 주세요 :) 빠르게 답장 드리겠습니다!</h1>
-          <p class="contact">
-            <a href="mailto:sh999051@gmail.com">Email</a>
-            <a
-              href="https://github.com/2sseong"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitHub</a
-            >
+      <!-- CONTACT -->
+      <section class="section cta" id="contact" data-io>
+        <div class="container">
+          <h2 class="headline">Contact</h2>
+          <h1>Thank You</h1>
+          <div class="muted thanks-sub">봐주셔서 감사합니다.</div>
+          <h3 class="email">sh999051@naver.com</h3>
+          <p class="body">저에게 궁금한 점이 있으시다면 연락해 주세요 :) 빠르게 답장 드리겠습니다!</p>
+          <p class="cta-buttons">
+            <a class="btn" href="mailto:sh999051@gmail.com">Email</a>
+            <a class="btn" href="https://github.com/2sseong" target="_blank" rel="noopener">GitHub</a>
           </p>
+        </div>
       </section>
     </main>
 
+    <!-- Scripts -->
     <script>
-      const sections = document.querySelectorAll(".stack-animate");
-      let current = 0;
-      let isScrolling = false;
+      // 새로고침 시 스크롤 복원 방지 + 항상 맨 위로
+      if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+      window.addEventListener('load', () => { window.scrollTo(0, 0); });
 
-      function showSection(index) {
-        if (index < 0 || index >= sections.length) return;
+      // TypeIt
+      document.addEventListener("DOMContentLoaded", function () {
+        new TypeIt("#typeit", { speed: 50, startDelay: 300 })
+          .type("Thanks for visiting.", { delay: 1000 })
+          .delete(null, { delay: 100 })
+          .type("exploring my portfolio", { delay: 800 })
+          .go();
+      });
 
-        sections.forEach((sec, i) => {
-          sec.classList.remove("stack-visible");
+      // IntersectionObserver: 섹션 리빌(강)
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-strong'); });
+      }, {threshold:.18});
+      document.querySelectorAll('[data-io]').forEach(el=>io.observe(el));
 
-        if (i === index) {
-          sec.classList.add("stack-visible");
-
-          const profileCard = document.querySelector(".profile-card-full");
-          if (sec.id !== "main") {
-            profileCard?.classList.add("fixed-visible");
-          } else {
-            profileCard?.classList.remove("fixed-visible");
-          }
-          sec.querySelectorAll(".scroll-fade-up").forEach((el) => {
-          el.classList.add("visible");
-          });
-          }
-        });
-
-        current = index;
-      }
-
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
+      // 부드러운 앵커 스크롤
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', (e)=>{
+          const id = a.getAttribute('href');
+          const el = document.querySelector(id);
+          if(!el) return;
           e.preventDefault();
-          const targetId = this.getAttribute("href").slice(1);
-          const target = document.getElementById(targetId);
-          const index = Array.from(sections).indexOf(target);
-          if (index !== -1) {
-            showSection(index);
-          }
+          el.scrollIntoView({behavior:'smooth', block:'start'});
         });
       });
-
-      window.addEventListener("wheel", (e) => {
-        if (isScrolling) return;
-        const currentSection = sections[current];
-        const atTop = currentSection.scrollTop === 0;
-        const atBottom = Math.ceil(currentSection.scrollTop + currentSection.clientHeight) >= currentSection.scrollHeight;
-        const scrollingDown = e.deltaY > 0;
-        const scrollingUp = e.deltaY < 0;
-
-        if ((scrollingDown && atBottom && current < sections.length - 1) ||
-            (scrollingUp && atTop && current > 0)) {
-          isScrolling = true;
-          showSection(current + (scrollingDown ? 1 : -1));
-          setTimeout(() => (isScrolling = false), 700);
-        }
-      });
-
-
-
-      window.addEventListener("DOMContentLoaded", () => {
-        showSection(0);
-      });
-      function showOverlay(id) {
-        document.getElementById(id).classList.add("active");
-      }
-      function hideOverlay(id) {
-        document.getElementById(id).classList.remove("active");
-      }
-      function keepOverlay(id) {
-      }
     </script>
   </body>
 </html>
