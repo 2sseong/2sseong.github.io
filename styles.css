@@ -83,8 +83,8 @@ header.nav{
 }
 
 /* Hero */
-.display{font-size: clamp(40px, 7vw, 84px); line-height:1.07; letter-spacing:-0.02em; margin:0 0 16px}
-.sub{color:var(--muted); font-size:clamp(14px, 2.5vw, 18px); margin:0}
+.display{font-size: clamp(30px, 7vw, 64px); line-height:1.07; letter-spacing:-0.02em; margin:0 0 16px}
+.sub{color:var(--muted); font-size:clamp(18px, 2.5vw, 24px); margin:0}
 
 /* Headline / Card */
 .headline{font-size: clamp(28px, 4.2vw, 40px); letter-spacing:-0.02em; margin:0 0 12px}
