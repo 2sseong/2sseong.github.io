@@ -6,7 +6,10 @@
     <title>이성훈 | 포트폴리오</title>
     <link rel="icon" type="image/png" href="./img/portfolioicon.png" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
     <script src="https://unpkg.com/typeit@8.8.7/dist/index.umd.js"></script>
   </head>
 
@@ -24,41 +27,60 @@
     </header>
 
     <main>
-      <!-- Hero / MAIN -->
-      <section class="section hero" id="home" data-io>
+      <!-- HOME -->
+      <section class="section hero" id="home">
         <div class="container">
-          <h1 class="display">보이지 않는 곳에서 서비스를 움직이는 개발자 이성훈입니다.</h1>
-          <p class="sub">Spring Boot · Oracle · React · Python</p>
-          <p class="sub" id="typeit"></p>
+          <h1 class="display" data-reveal>
+            보이지 않는 곳에서 서비스를 움직이는 개발자 이성훈입니다.
+          </h1>
+          <p class="sub" data-reveal data-reveal-delay="120">
+            Spring Boot · Oracle · React · Python
+          </p>
+          <p class="sub" id="typeit" data-reveal data-reveal-delay="240"></p>
         </div>
       </section>
 
       <!-- ABOUT -->
-      <section class="section" id="about" data-io>
+      <section class="section" id="about">
         <div class="container grid-2">
-          <!-- 소개/과정 -->
           <div>
-            <h2 class="headline">About</h2>
-            <div class="card body">
+            <h2 class="headline" data-reveal>About</h2>
+            <div class="card body" data-reveal data-reveal-delay="80">
               <p>안녕하세요! 신입 백엔드 개발자 이성훈입니다.</p>
-              <p>Java, Spring Boot, Oracle, MySQL, Python 등 다양한 기술을 활용하여 서버 사이드 로직을 설계하고, React를 통한 프론트엔드 연동도 함께 경험했습니다. 데이터 흐름과 구조를 이해하며, 안정적인 백엔드 시스템 구현에 집중하고 있습니다.</p>
-              <p>기획 의도를 파악하고, 사용자 관점에서 더 나은 방향을 고민하는 것을 좋아합니다. 문제가 생기면 끝까지 파고들며, 해결할 때의 성취감이 저를 한 단계 더 성장하게 합니다.</p>
-              <p>새로운 기술을 배우는 것을 즐기고, 맡은 일에 책임감을 가지고 임합니다. 주어진 역할 속에서 팀과 함께 성장하며, 가치 있는 결과를 만들어내는 개발자가 되고자 합니다.</p>
+              <p>
+                Java, Spring Boot, Oracle, MySQL, Python 등 다양한 기술을 활용하여
+                서버 사이드 로직을 설계하고, React를 통한 프론트엔드 연동도 함께
+                경험했습니다. 데이터 흐름과 구조를 이해하며, 안정적인 백엔드
+                시스템 구현에 집중하고 있습니다.
+              </p>
+              <p>
+                기획 의도를 파악하고, 사용자 관점에서 더 나은 방향을 고민하는 것을
+                좋아합니다. 문제가 생기면 끝까지 파고들며, 해결할 때의 성취감이 저를
+                한 단계 더 성장하게 합니다.
+              </p>
+              <p>
+                새로운 기술을 배우는 것을 즐기고, 맡은 일에 책임감을 가지고 임합니다.
+                주어진 역할 속에서 팀과 함께 성장하며, 가치 있는 결과를 만들어내는
+                개발자가 되고자 합니다.
+              </p>
             </div>
 
-            <div class="card">
+            <div class="card" data-reveal data-reveal-delay="160">
               <h3 class="card-title">Course Completion</h3>
               <p class="body"><strong>교육명:</strong> 빅데이터를 활용한 자바 개발자</p>
               <p class="body"><strong>교육기간:</strong> 2025.02.03 ~ 2025.07.29</p>
               <p class="body"><strong>교육기관명:</strong> 부경대학교 지역산업맞춤형 인력양성사업단</p>
-              <p class="body"><strong>내용:</strong> HTML5/CSS3, JavaScript/jQuery, Oracle DB, Java, JSP, Spring, Python, React</p>
+              <p class="body">
+                <strong>내용:</strong> HTML5/CSS3, JavaScript/jQuery, Oracle DB, Java, JSP,
+                Spring, Python, React
+              </p>
             </div>
           </div>
 
-          <!-- 프로필/스킬(사이드) -->
+          <!-- 프로필/사이드 스킬 -->
           <aside class="profile-wrap">
             <div class="profile-sticky">
-              <div class="card profile-card">
+              <div class="card profile-card" data-reveal>
                 <img class="avatar" src="./img/profile.jpg" alt="프로필" />
                 <div>
                   <h2><i class="bi bi-person-circle"></i> 이성훈</h2>
@@ -68,13 +90,21 @@
                 </div>
               </div>
 
-              <div class="card skills">
+              <div class="card skills" data-reveal data-reveal-delay="120">
                 <h3 class="card-title">Skills</h3>
                 <ul class="list">
-                  <li><span class="chip"><i class="bi bi-code-slash"></i> Java · Python</span></li>
-                  <li><span class="chip"><i class="bi bi-database"></i> Oracle · MySQL</span></li>
-                  <li><span class="chip"><i class="bi bi-boxes"></i> Spring Boot · React</span></li>
-                  <li><span class="chip"><i class="bi bi-cloud"></i> REST · Docker · JWT</span></li>
+                  <li>
+                    <span class="chip"><i class="bi bi-code-slash"></i> Java · Python</span>
+                  </li>
+                  <li>
+                    <span class="chip"><i class="bi bi-database"></i> Oracle · MySQL</span>
+                  </li>
+                  <li>
+                    <span class="chip"><i class="bi bi-boxes"></i> Spring Boot · React</span>
+                  </li>
+                  <li>
+                    <span class="chip"><i class="bi bi-cloud"></i> REST · Docker · JWT</span>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -82,12 +112,12 @@
         </div>
       </section>
 
-      <!-- Skills (메인 섹션) -->
-      <section class="section" id="skills" data-io>
+      <!-- SKILLS (메인) -->
+      <section class="section" id="skills">
         <div class="container">
-          <h2 class="headline">Skills</h2>
+          <h2 class="headline" data-reveal>Skills</h2>
           <div class="skills-grid">
-            <article class="skill-card">
+            <article class="skill-card" data-reveal>
               <h3>Language</h3>
               <ul class="skill-list">
                 <li>Java</li>
@@ -96,7 +126,7 @@
               </ul>
             </article>
 
-            <article class="skill-card">
+            <article class="skill-card" data-reveal data-reveal-delay="80">
               <h3>Backend / Framework</h3>
               <ul class="skill-list">
                 <li>Spring Boot (JPA, Security)</li>
@@ -105,7 +135,7 @@
               </ul>
             </article>
 
-            <article class="skill-card">
+            <article class="skill-card" data-reveal data-reveal-delay="160">
               <h3>Database</h3>
               <ul class="skill-list">
                 <li>Oracle · MySQL</li>
@@ -114,7 +144,7 @@
               </ul>
             </article>
 
-            <article class="skill-card">
+            <article class="skill-card" data-reveal data-reveal-delay="240">
               <h3>Frontend</h3>
               <ul class="skill-list">
                 <li>React (Hooks)</li>
@@ -123,7 +153,7 @@
               </ul>
             </article>
 
-            <article class="skill-card">
+            <article class="skill-card" data-reveal data-reveal-delay="320">
               <h3>Infra / Tools</h3>
               <ul class="skill-list">
                 <li>Docker · Git/GitHub</li>
@@ -136,18 +166,26 @@
       </section>
 
       <!-- PROJECTS -->
-      <section class="section" id="projects" data-io>
+      <section class="section" id="projects">
         <div class="container">
-          <h2 class="headline">Projects</h2>
+          <h2 class="headline" data-reveal>Projects</h2>
 
           <div class="gallery">
             <!-- 프로젝트 1 -->
-            <a class="project" href="https://github.com/2sseong/mini_project_2025-03" target="_blank" rel="noopener">
-              <img src="./img/project1.png" alt="영화예매 키오스크" class="project-img"/>
+            <a
+              class="project"
+              href="https://github.com/2sseong/mini_project_2025-03"
+              target="_blank"
+              rel="noopener"
+              data-reveal
+            >
+              <img src="./img/project1.png" alt="영화예매 키오스크" class="project-img" />
               <div class="overlay">
                 <div>
                   <h3>영화예매 키오스크 사이트</h3>
-                  <p><strong>주제:</strong> 예매 정보를 기반으로 데이터 시각화가 가능한 키오스크 서비스</p>
+                  <p>
+                    <strong>주제:</strong> 예매 정보를 기반으로 데이터 시각화가 가능한 키오스크 서비스
+                  </p>
                   <p><strong>기술:</strong> PyQt5 · Python · Oracle</p>
                   <ul class="bullets">
                     <li>영화/시간/관/인원/좌석 선택 & 결제</li>
@@ -159,8 +197,15 @@
             </a>
 
             <!-- 프로젝트 2 -->
-            <a class="project" href="https://github.com/park0609/Mini_Project2?tab=readme-ov-file" target="_blank" rel="noopener">
-              <img src="./img/project2.png" alt="IT 자격증 정보 공유" class="project-img"/>
+            <a
+              class="project"
+              href="https://github.com/park0609/Mini_Project2?tab=readme-ov-file"
+              target="_blank"
+              rel="noopener"
+              data-reveal
+              data-reveal-delay="120"
+            >
+              <img src="./img/project2.png" alt="IT 자격증 정보 공유" class="project-img" />
               <div class="overlay">
                 <div>
                   <h3>IT 자격증 정보 공유 게시판</h3>
@@ -174,57 +219,54 @@
                 </div>
               </div>
             </a>
+
+            <!-- 프로젝트 3 -->
+            <a
+              class="project"
+              href="https://github.com/jszxro/PK_project_4?tab=readme-ov-file"
+              target="_blank"
+              rel="noopener"
+              data-reveal
+              data-reveal-delay="240"
+            >
+              <img src="./img/project3.png" alt="음악 기반 감정 기록 서비스" class="project-img" />
+              <div class="overlay">
+                <div>
+                  <h3>음악 기반 감정 기록 서비스</h3>
+                  <p>
+                    <strong>주제:</strong> 감정을 기반으로 음악을 추천하고, 감정을 일기 형태로 기록할 수 있는 감성 중심의 웹 서비스
+                  </p>
+                  <p><strong>기술:</strong> Spring Boot · React · Oracle · Python</p>
+                  <ul class="bullets">
+                    <li>선택한 감정별 실시간 채팅 기능</li>
+                    <li>감정 기반 해시태그로 유튜브 플레이리스트 추천</li>
+                    <li>감정을 기록할 수 있는 일기 작성 기능 및 감정 캘린더</li>
+                  </ul>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </section>
 
       <!-- CONTACT -->
-      <section class="section cta" id="contact" data-io>
+      <section class="section cta" id="contact">
         <div class="container">
-          <h2 class="headline">Contact</h2>
-          <h1>Thank You</h1>
-          <div class="muted thanks-sub">봐주셔서 감사합니다.</div>
-          <h3 class="email">sh999051@naver.com</h3>
-          <p class="body">저에게 궁금한 점이 있으시다면 연락해 주세요 :) 빠르게 답장 드리겠습니다!</p>
+          <h2 class="headline" data-reveal>Contact</h2>
+          <h1 data-reveal data-reveal-delay="80">Thank You</h1>
+          <div class="muted thanks-sub" data-reveal data-reveal-delay="160">봐주셔서 감사합니다.</div>
+          <h3 class="email" data-reveal data-reveal-delay="200">sh999051@naver.com</h3>
+          <p class="body" data-reveal data-reveal-delay="240">
+            저에게 궁금한 점이 있으시다면 연락해 주세요 :) 빠르게 답장 드리겠습니다!
+          </p>
           <p class="cta-buttons">
-            <a class="btn" href="mailto:sh999051@gmail.com">Email</a>
-            <a class="btn" href="https://github.com/2sseong" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="mailto:sh999051@gmail.com" data-reveal data-reveal-delay="300">Email</a>
+            <a class="btn" href="https://github.com/2sseong" target="_blank" rel="noopener" data-reveal data-reveal-delay="340">GitHub</a>
           </p>
         </div>
       </section>
     </main>
 
-    <!-- Scripts -->
-    <script>
-      // 새로고침 시 스크롤 복원 방지 + 항상 맨 위로
-      if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
-      window.addEventListener('load', () => { window.scrollTo(0, 0); });
-
-      // TypeIt
-      document.addEventListener("DOMContentLoaded", function () {
-        new TypeIt("#typeit", { speed: 50, startDelay: 300 })
-          .type("Thanks for visiting.", { delay: 1000 })
-          .delete(null, { delay: 100 })
-          .type("exploring my portfolio", { delay: 800 })
-          .go();
-      });
-
-      // IntersectionObserver: 섹션 리빌(강)
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-strong'); });
-      }, {threshold:.18});
-      document.querySelectorAll('[data-io]').forEach(el=>io.observe(el));
-
-      // 부드러운 앵커 스크롤
-      document.querySelectorAll('a[href^="#"]').forEach(a=>{
-        a.addEventListener('click', (e)=>{
-          const id = a.getAttribute('href');
-          const el = document.querySelector(id);
-          if(!el) return;
-          e.preventDefault();
-          el.scrollIntoView({behavior:'smooth', block:'start'});
-        });
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
