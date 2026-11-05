@@ -35,7 +35,16 @@ const revealObserver = new IntersectionObserver((entries, obs) => {
     obs.unobserve(el);
   });
 }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
-document.querySelectorAll("[data-reveal]").forEach((el) => revealObserver.observe(el));
+document.querySelectorAll("[data-reveal]").forEach((el) => {
+  // 첫 화면(히어로)은 스크롤 감지 없이 바로 순서대로 표시
+  if (el.closest(".hero")) {
+    const delay = el.getAttribute("data-reveal-delay");
+    if (delay) el.style.setProperty("--reveal-delay", `${delay}ms`);
+    requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add("in")));
+  } else {
+    revealObserver.observe(el);
+  }
+});
 
 /* ---------- 숫자 카운트업 ---------- */
 const countObserver = new IntersectionObserver((entries, obs) => {
@@ -95,6 +104,8 @@ function onScroll() {
   nav.classList.toggle("scrolled", y > 8);
   const max = document.documentElement.scrollHeight - window.innerHeight;
   progress.style.setProperty("--p", max > 0 ? y / max : 0);
+  // 페이지 끝에 닿으면 아직 안 나타난 요소를 모두 표시
+  if (max - y < 4) document.querySelectorAll("[data-reveal]:not(.in)").forEach((el) => el.classList.add("in"));
 }
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
@@ -147,15 +158,17 @@ document.querySelectorAll(".spot").forEach((el) => {
 
 /* ---------- 이하 마우스 전용 인터랙션 ---------- */
 if (finePointer && !reduceMotion) {
-  root.classList.add("has-cursor");
+  root.classList.add("has-cursor", "cursor-hidden");
 
   // 커서: 점은 즉시, 링은 부드럽게 따라옴
   const dot = document.querySelector(".cursor-dot");
   const ring = document.querySelector(".cursor-ring");
   let mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my;
 
+  let moved = false;
   window.addEventListener("pointermove", (e) => {
     mx = e.clientX; my = e.clientY;
+    if (!moved) { rx = mx; ry = my; moved = true; }
     dot.style.transform = `translate(${mx}px, ${my}px)`;
     root.classList.remove("cursor-hidden");
   }, { passive: true });
@@ -198,26 +211,27 @@ if (finePointer && !reduceMotion) {
     card.addEventListener("pointerleave", () => { card.style.transform = ""; });
   });
 
-  // 히어로: 배경 오브 패럴랙스 + 그리드 마스크가 커서를 따라감
+  // 히어로: 배경 오브·목업 레이어 패럴랙스 + 그리드 마스크가 커서를 따라감
   const hero = document.querySelector(".hero");
-  const orbs = [...document.querySelectorAll(".orb")];
+  const layers = [...hero.querySelectorAll("[data-depth]")];
   hero.addEventListener("pointermove", (e) => {
     const r = hero.getBoundingClientRect();
     const px = (e.clientX - r.left) / r.width - 0.5;
     const py = (e.clientY - r.top) / r.height - 0.5;
-    orbs.forEach((o) => {
-      const d = Number(o.dataset.depth);
-      o.style.transform = `translate(${px * d * 2}px, ${py * d * 2}px)`;
+    layers.forEach((l) => {
+      const d = Number(l.dataset.depth);
+      l.style.transform = `translate(${px * d * 2}px, ${py * d * 2}px)`;
     });
     hero.style.setProperty("--gx", `${(px + 0.5) * 100}%`);
     hero.style.setProperty("--gy", `${(py + 0.5) * 100}%`);
   });
+  hero.addEventListener("pointerleave", () => layers.forEach((l) => { l.style.transform = ""; }));
 
-  // Contact: Thank You 그라데이션이 커서를 따라감
-  const thanks = document.querySelector(".thanks");
-  document.querySelector(".contact").addEventListener("pointermove", (e) => {
-    const r = thanks.getBoundingClientRect();
-    thanks.style.setProperty("--tx", `${e.clientX - r.left}px`);
-    thanks.style.setProperty("--ty", `${e.clientY - r.top}px`);
+  // Contact: 패널 안의 빛이 커서를 따라감
+  const panel = document.querySelector(".contact-panel");
+  panel.addEventListener("pointermove", (e) => {
+    const r = panel.getBoundingClientRect();
+    panel.style.setProperty("--tx", `${e.clientX - r.left}px`);
+    panel.style.setProperty("--ty", `${e.clientY - r.top}px`);
   });
 }

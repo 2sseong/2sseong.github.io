@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="styles.css" />
     <script>
-      // 첫 페인트 전에 테마 적용 (깜빡임 방지)
+      // 첫 페인트 전에 테마 적용 (깜빡임 방지) + JS 사용 가능 표시
+      document.documentElement.classList.add("js");
       try {
         const t = localStorage.getItem("theme");
         if (t) document.documentElement.dataset.theme = t;
@@ -61,6 +62,7 @@
         </div>
 
         <div class="container hero-inner">
+          <div class="hero-copy">
           <p class="status-pill" data-reveal>
             <span class="pulse"></span>
             2025.10.27 ~ 현재 · (주)엠아이테크 PLM 엔지니어
@@ -69,7 +71,8 @@
           <h1 class="hero-title">
             <span class="line"><span>제품의 모든 순간을</span></span>
             <span class="line"><span><em class="gradient-text">데이터로 잇는</em></span></span>
-            <span class="line"><span>PLM 엔지니어 이성훈입니다.</span></span>
+            <span class="line"><span>PLM 엔지니어,</span></span>
+            <span class="line"><span>이성훈입니다.</span></span>
           </h1>
 
           <p class="hero-sub" data-reveal data-reveal-delay="500">
@@ -84,6 +87,51 @@
           <div class="hero-cta" data-reveal data-reveal-delay="740">
             <a class="btn btn-primary magnetic" href="#projects" data-cursor="link"><span>프로젝트 보기</span><i class="bi bi-arrow-down"></i></a>
             <a class="btn btn-ghost magnetic" href="#contact" data-cursor="link"><span>연락하기</span></a>
+          </div>
+          </div>
+
+          <!-- 히어로 비주얼: PLM 워크스페이스 목업 -->
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hv-layer" data-depth="-10">
+              <div class="hv-card hv-main">
+                <div class="hv-top">
+                  <span class="hv-dots"><i></i><i></i><i></i></span>
+                  <span class="hv-title">Product Structure</span>
+                  <span class="hv-search"><i class="bi bi-search"></i> Search</span>
+                </div>
+                <div class="hv-cols"><span>Item</span><span>Rev</span><span>Status</span></div>
+                <ul class="bom">
+                  <li class="lv0"><span class="nm"><i class="bi bi-caret-down-fill"></i><b class="ico asm"><i class="bi bi-box-seam"></i></b>EV Drive Unit</span><span class="rev">A</span><span class="st ok">Released</span></li>
+                  <li class="lv1"><span class="nm"><i class="bi bi-caret-down-fill"></i><b class="ico sub"><i class="bi bi-boxes"></i></b>Motor Housing</span><span class="rev">B</span><span class="st wip">Working</span></li>
+                  <li class="lv2"><span class="nm"><b class="ico part"><i class="bi bi-gear-fill"></i></b>Housing Cover</span><span class="rev">C</span><span class="st ok">Released</span></li>
+                  <li class="lv2"><span class="nm"><b class="ico part"><i class="bi bi-circle"></i></b>Bearing 6204</span><span class="rev">A</span><span class="st ok">Released</span></li>
+                  <li class="lv1 sel"><span class="nm"><i class="bi bi-caret-down-fill"></i><b class="ico sub"><i class="bi bi-cpu"></i></b>Inverter Module</span><span class="rev">B</span><span class="st rv">In Review</span></li>
+                  <li class="lv2"><span class="nm"><b class="ico part"><i class="bi bi-motherboard"></i></b>PCB Assembly</span><span class="rev">D</span><span class="st wip">Working</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="hv-layer hv-layer-eco" data-depth="22">
+              <div class="hv-card hv-eco">
+                <div class="eco-head">
+                  <span class="eco-id">ECO-2511</span>
+                  <span class="st rv">In Review</span>
+                </div>
+                <p class="eco-title">Inverter Module 설계 변경</p>
+                <div class="eco-steps"><i class="done"></i><i class="done"></i><i class="now"></i><i></i></div>
+                <p class="eco-meta">승인 단계 3 / 4</p>
+              </div>
+            </div>
+
+            <div class="hv-layer hv-layer-rev" data-depth="36">
+              <div class="hv-card hv-rev">
+                <span class="rev-check"><i class="bi bi-check-lg"></i></span>
+                <div>
+                  <p class="rev-title">Housing Cover · Rev C</p>
+                  <p class="rev-meta">Released · 방금 전</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -260,7 +308,7 @@
               </ul>
             </article>
 
-            <article class="skill-card spot" data-reveal data-reveal-delay="240">
+            <article class="skill-card spot bento-full" data-reveal data-reveal-delay="240">
               <div class="skill-icon"><i class="bi bi-cloud-fill"></i></div>
               <h3>Cloud / Infra / Tools</h3>
               <ul class="chips">
@@ -348,6 +396,7 @@
       <!-- CONTACT -->
       <section class="section contact" id="contact">
         <div class="container">
+          <div class="contact-panel">
           <p class="eyebrow" data-reveal>Contact</p>
           <h2 class="thanks" data-reveal data-reveal-delay="80">Thank You<span>.</span></h2>
           <p class="contact-sub" data-reveal data-reveal-delay="160">
@@ -363,6 +412,7 @@
           <div class="contact-cta" data-reveal data-reveal-delay="280">
             <a class="btn btn-primary magnetic" href="mailto:sh999051@gmail.com" data-cursor="link"><i class="bi bi-envelope-fill"></i><span>Email</span></a>
             <a class="btn btn-ghost magnetic" href="https://github.com/2sseong" target="_blank" rel="noopener" data-cursor="link"><i class="bi bi-github"></i><span>GitHub</span></a>
+          </div>
           </div>
         </div>
       </section>
